@@ -1,0 +1,2 @@
+# Telefon_narxini_bashorat_qilish
+ Telefon_narxini_bashorat_qilish
