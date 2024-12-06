@@ -30,12 +30,11 @@ condition = st.selectbox("Telefon holati", options=["yangi", "ishlatilgan", "ta'
 condition_map = {"yangi": 1, "ishlatilgan": 0.5, "ta'mirlangan": 0.3}
 condition_value = condition_map[condition]
 
-# Make prediction
-features = np.array([[sale, weight, resoloution, ppi, cpu_core, cpu_freq, internal_mem,
-                      ram, rear_cam, front_cam, battery, thickness, lifespan, year, condition_value]])
-predicted_price = model.predict(features)
+# Bashorat tugmasi
+if st.button("Bashorat qilish"):
+    # Make prediction
+    features = np.array([[sale, weight, resoloution, ppi, cpu_core, cpu_freq, internal_mem,
+                          ram, rear_cam, front_cam, battery, thickness, lifespan, year, condition_value]])
+    predicted_price = model.predict(features)
 
-st.subheader(f"Telefon Narxi Bashorati: {predicted_price[0]:,.2f} dollar")
-
-
-
+    st.subheader(f"Telefon Narxi Bashorati: {predicted_price[0]:,.2f} dollar")
